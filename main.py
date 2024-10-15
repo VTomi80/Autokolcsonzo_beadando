@@ -1,8 +1,10 @@
 from Autok import Auto
-from Autokolcsonzo.Autok import szemelyauto, teherauto
+from Autok import szemelyauto, teherauto
 from Berles import Berles
 from Berlo import Berlo
 from Kolcsonzo import Kolcsonzo
+from datetime import date
+
 
 def adatfeltoltes():
 
@@ -24,11 +26,12 @@ def adatfeltoltes():
     kolcsonzo.uj_auto(auto3)
     kolcsonzo.uj_auto(auto4)
 
-    kolcsonzo.auto_berles("ABC-123", "AB123456","2024-11-01", 3)
-    kolcsonzo.auto_berles("BBC-007", "AB654321","2024-10-15", 5)
-    kolcsonzo.auto_berles("BBW-113", "AB654321","2024-10-15", 2)
+    kolcsonzo.auto_berles("ABC-123", "AB123456", "2024-11-01", 3)
+    kolcsonzo.auto_berles("BBC-007", "AB654321", "2024-10-15", 5)
+    kolcsonzo.auto_berles("BBW-113", "AB654321", "2024-10-15", 2)
 
     return kolcsonzo
+
 
 def interface(kolcsonzo):
     while True:
@@ -49,7 +52,10 @@ def interface(kolcsonzo):
 
         elif val == "2":
             rendszam = input("Adja meg a lemondani kívánt autó rendszámát: ")
-            kolcsonzo.lemondas(rendszam)
+            datum = input(
+                "Adja meg a lemondani kívánt bérlés kezdetének dátumát (YYYY-MM-DD): ")
+            kolcsonzo.lemondas(rendszam, date(
+                int(datum[0: 4]), int(datum[5: 7]), int(datum[8:])))
 
         elif val == "3":
             kolcsonzo.lista()
@@ -60,12 +66,6 @@ def interface(kolcsonzo):
         else:
             print("Érvénytelen válasz.")
 
+
 kolcsonzo = adatfeltoltes()
 interface(kolcsonzo)
-
-
-
-
-
-
-
