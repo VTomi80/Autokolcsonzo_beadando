@@ -5,7 +5,6 @@ class Auto:
         self.dij = dij
         self.elerheto = True #default érték, az autó létrehozásakor elérhető
 
-
 class szemelyauto(Auto):
     def __init__(self, tipus, rendszam, dij, utas_szam, uzemanyag):
         super().__init__(tipus, rendszam, dij) #Az Auto absztrakt osztály, a saját attribútumokat itt adjuk a személyautó osztályhoz
@@ -23,12 +22,4 @@ class teherauto(Auto):
 
     def __str__(self):
         return f"Típus: {self.tipus}, Rendszám: {self.rendszam}, Dij: {self.dij}, Teherbírás: {self.teherbiras}, Billent: {self.billent}"
-
-
-
-
-
-
-
-
 
