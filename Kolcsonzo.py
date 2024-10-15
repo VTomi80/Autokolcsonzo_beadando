@@ -25,7 +25,6 @@ class Kolcsonzo:
                     print("Helytelen dátumformátum. A szükséges formátum: YYYY-MM-DD")
                     return None
 
-                # Keresd meg a bérlőt az ID alapján
                 berlo = next((b for b in self.berlok if b.id == berlo_id), None)
                 if not berlo:
                     print("Nincs ilyen bérlő.")
