@@ -26,12 +26,12 @@ class Kolcsonzo:
                     return None
 
                 # Keresd meg a bérlőt az ID alapján
-                berlo = next((b for b in self.berlok if b.id == berlo_id), None)  # Frissítés itt
+                berlo = next((b for b in self.berlok if b.id == berlo_id), None)
                 if not berlo:
                     print("Nincs ilyen bérlő.")
                     return None
 
-                uj_berles = Berles(auto, berlo, kezdet, napok)  # Itt auto és berlo kell, hogy objektumok legyen
+                uj_berles = Berles(auto, berlo, kezdet, napok)
                 self.berlesek.append(uj_berles)
                 print(f"Bérlés regisztrálva!")
                 return uj_berles
